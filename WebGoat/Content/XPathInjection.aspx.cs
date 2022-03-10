@@ -17,7 +17,24 @@ namespace OWASP.WebGoat.NET
         {
             if (Request.QueryString["state"] != null)
             {
+                
                 FindSalesPerson(Request.QueryString["state"]);
+                //ido - need to fix here xpath and add code like this
+
+                XPathExpression xpath = XPathExpression.Compile(expr);
+                
+                // Define variables and resolver
+                //   Implement CustomContext as a subclass of XsltContext
+                CustomContext ctxParameters = new CustomContext(); 
+                ctxParameters.AddVariable("userId", userId);        
+                xpath.SetContext(ctxParameters);
+                
+                XmlDocument docUsers = new XmlDocument();
+                docUsers.Load(USERS_XML_FILE);
+                XPathNavigator navigator = docUsers.CreateNavigator();
+                
+                output = (string)navigator.Evaluate(xpath);
+
             }
         }
 
