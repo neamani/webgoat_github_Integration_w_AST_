@@ -20,7 +20,7 @@ namespace OWASP.WebGoat.NET.App_Code
         {
             _filePath = fileName;
         }
-            
+          // ido comment  
         //TODO: Obviously no checks for problems, so when you get time do it like bhudda.
         public void Load()
         {
