@@ -9,7 +9,7 @@ using OWASP.WebGoat.NET.App_Code.DB;
 using OWASP.WebGoat.NET.App_Code;
 using log4net;
 using System.Reflection;
-
+// ido comment
 namespace OWASP.WebGoat.NET.WebGoatCoins
 {
     public partial class CustomerLogin : System.Web.UI.Page
